@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_first_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.cruz.ethelon.FirstScreen">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <ImageView
+            android:id="@+id/login"
+            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/register"
+            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Lorem Epsum Lorem Epsum Lorem Epsum Lorem Epsum Lorem Epsum"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:gravity="center"
+
+        android:layout_above="@id/linear"
+        android:layout_marginBottom="30dp"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/textView"
+        android:layout_above="@id/editText"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ViewFlipper
+            android:id="@+id/bckgrndViewFlipper1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/a"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/e8" />
+
+            <ImageView
+                android:id="@+id/b"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/e4" />
+
+            <ImageView
+                android:id="@+id/c"
+                android:layout_width="fill_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/e7"
+                android:layout_height="match_parent" />
+
+
+        </ViewFlipper>
+
+    </RelativeLayout>
+
+</RelativeLayout>
