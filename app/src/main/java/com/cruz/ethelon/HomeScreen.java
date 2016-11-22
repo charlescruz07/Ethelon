@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.support.v4.app.Fragment;
 
 public class HomeScreen extends Activity {
 
