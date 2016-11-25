@@ -18,6 +18,7 @@
         <activity android:name=".HomeScreen"></activity>
         <activity android:name=".NotificationActivity"></activity>
         <activity android:name=".FiveColorChangingTabsActivity"></activity>
+        <activity android:name=".ActivityDetails"/>
     </application>
 
 </manifest>

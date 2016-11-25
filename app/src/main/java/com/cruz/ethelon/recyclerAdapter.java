@@ -16,20 +16,20 @@ import org.w3c.dom.Text;
 
 public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHolder>{
 
-    private String[] actName = {"Chapter One",
-            "Chapter Two",
-            "Chapter Three",
-            "Chapter Four",
-            "Chapter Five",
-            "Chapter Six",
-            "Chapter Seven",
-            "Chapter Eight"};
+    private String[] actName = {"Feeding Program",
+            "Disaster Relief",
+            "Children Vaccination",
+            "Tuli Operation",
+            "Dental Mission",
+            "Feeding Program",
+            "Disaster Relief",
+            "Medical Mission"};
 
-    private String[] actDetails = {"Item one details",
-            "Item two details", "Item three details",
-            "Item four details", "Item file details",
-            "Item six details", "Item seven details",
-            "Item eight details"};
+    private String[] actDetails = {"Rise Above Foundation",
+            "Ramon Aboitiz Foundation Inc.", "Rise Above Foundation",
+            "Ramon Aboitiz Foundation Inc.", "Rise Above Foundation",
+            "Ramon Aboitiz Foundation Inc.", "Rise Above Foundation",
+            "Ramon Aboitiz Foundation Inc."};
 
     private String[] actHost = {"Lorem Epsum",
             "Item two details", "Item three details",
@@ -37,14 +37,14 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
             "Item six details", "Item seven details",
             "Item eight details"};
 
-    private int[] images = { R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2,
-            R.drawable.v2};
+    private int[] images = { R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1,
+            R.drawable.v1};
 
 
     class ViewHolder extends RecyclerView.ViewHolder{
@@ -57,7 +57,6 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
             itemImage = (ImageView)itemView.findViewById(R.id.itemImage);
             activityName = (TextView)itemView.findViewById(R.id.activityName);
             activityDetails = (TextView)itemView.findViewById(R.id.activityDetails);
-            activityHost = (TextView)itemView.findViewById(R.id.activityHost);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
@@ -83,7 +82,6 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
         holder.itemImage.setImageResource(images[position]);
         holder.activityName.setText(actName[position]);
         holder.activityDetails.setText(actDetails[position]);
-        holder.activityHost.setText(actHost[position]);
     }
 
     @Override

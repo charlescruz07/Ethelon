@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.cruz.ethelon.fragments.HomeFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
 import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -24,6 +25,7 @@ import com.roughike.bottombar.OnTabSelectListener;
  */
 public class FiveColorChangingTabsActivity extends Activity {
 
+    BottomBarTab notif;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,9 @@ public class FiveColorChangingTabsActivity extends Activity {
         fm.beginTransaction().replace(R.id.menu_frame, new HomeFragment()).commit();
 
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        notif = bottomBar.getTabWithId(R.id.tab_notification);
+        notif.setBadgeCount(10);
+
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
@@ -45,8 +50,8 @@ public class FiveColorChangingTabsActivity extends Activity {
                 }
 
                 if(tabId == R.id.tab_notification){
-                    //startActivity(new Intent(FiveColorChangingTabsActivity.this,NotificationActivity.class));
                     fm.beginTransaction().replace(R.id.menu_frame,new NotificationFragment()).commit();
+                    notif.removeBadge();
                 }
             }
         });
@@ -57,5 +62,6 @@ public class FiveColorChangingTabsActivity extends Activity {
                 //Toast.makeText(getApplicationContext(), TabMessage.get(tabId, true), Toast.LENGTH_LONG).show();
             }
         });
+
     }
 }

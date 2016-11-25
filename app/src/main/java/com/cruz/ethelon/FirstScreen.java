@@ -44,8 +44,9 @@ public class FirstScreen extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstScreen.this,FiveColorChangingTabsActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(FirstScreen.this,FiveColorChangingTabsActivity.class);
+//                startActivity(intent);
+                startActivity(new Intent(FirstScreen.this,ActivityDetails.class));
             }
         });
         viewFlipper = (ViewFlipper) this.findViewById(R.id.bckgrndViewFlipper1);
