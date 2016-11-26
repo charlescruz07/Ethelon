@@ -1,5 +1,7 @@
 package com.cruz.ethelon;
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,26 +51,53 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView itemImage;
-        public TextView activityName,activityDetails,activityHost;
+        public ImageView itemImage, joinBtn, referBtn;
+        public TextView activityName,activityDetails;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemImage = (ImageView)itemView.findViewById(R.id.itemImage);
             activityName = (TextView)itemView.findViewById(R.id.activityName);
             activityDetails = (TextView)itemView.findViewById(R.id.activityDetails);
+            joinBtn = (ImageView) itemView.findViewById(R.id.joinBtn);
+            referBtn = (ImageView) itemView.findViewById(R.id.referBtn);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    int position = getAdapterPosition();
-
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+            itemImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(v.getContext(),ActivityDetails.class);
+                    v.getContext().startActivity(intent);
                 }
             });
+
+            joinBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar.make(v, "Click detected on joinBtn", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                }
+            });
+
+            referBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar.make(v, "Click detected on referBtn", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                }
+            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override public void onClick(View v) {
+//                    int position = getAdapterPosition();
+//
+//                    Snackbar.make(v, "Click detected on item " + position,
+//                            Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
+//                }
+//            });
+
         }
     }
+
+
 
     @Override
     public recyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
