@@ -28,23 +28,27 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:background="@color/colorAccent"
+            android:src="@drawable/ic_share_black"
             android:layout_below="@+id/imgPicDetails"
             android:layout_marginTop="10dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:id="@+id/referBtn"
+            android:scaleX="2"
+            android:scaleY="2"
             />
 
         <ImageView
             android:id="@+id/joinBtn"
             android:layout_width="30dp"
             android:layout_height="20dp"
-            android:background="@color/colorAccent"
+            android:src="@drawable/ic_checked_black"
             android:layout_below="@+id/imgPicDetails"
             android:layout_marginTop="10dp"
             android:layout_toLeftOf="@id/referBtn"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
+            android:scaleY="2"
+            android:scaleX="2"
             />
 
         <TextView
