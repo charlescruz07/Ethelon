@@ -53,6 +53,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 
         public ImageView itemImage, joinBtn, referBtn;
         public TextView activityName,activityDetails;
+        int joinClick = 0, referClick = 0;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -72,14 +73,26 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
             joinBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v, "Click detected on joinBtn", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                    if(joinClick == 0){
+                    joinBtn.setImageResource(R.drawable.ic_heart_red);
+                    joinClick = 1;
+                    }else {
+                        joinBtn.setImageResource(R.drawable.ic_heart);
+                        joinClick = 0;
+                    }
                 }
             });
 
             referBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v, "Click detected on referBtn", Snackbar.LENGTH_LONG).setAction("Action",null).show();
+                    if(referClick == 0){
+                    referBtn.setImageResource(R.drawable.ic_arrow_red);
+                    referClick = 1;
+                    }else {
+                        referBtn.setImageResource(R.drawable.ic_arrow);
+                        referClick =0 ;
+                    }
                 }
             });
 //            itemView.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +104,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 //                            .setAction("Action", null).show();
 //                }
 //            });
+
 
         }
     }
