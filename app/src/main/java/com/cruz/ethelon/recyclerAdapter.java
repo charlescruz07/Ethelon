@@ -56,11 +56,9 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemImage = (ImageView)itemView.findViewById(R.id.itemImage);
-            activityName = (TextView)itemView.findViewById(R.id.activityName);
-            activityDetails = (TextView)itemView.findViewById(R.id.activityDetails);
-            joinBtn = (ImageView) itemView.findViewById(R.id.joinBtn);
-            referBtn = (ImageView) itemView.findViewById(R.id.referBtn);
+            itemImage = (ImageView)itemView.findViewById(R.id.antonshit);
+            joinBtn = (ImageView) itemView.findViewById(R.id.hearty);
+            referBtn = (ImageView) itemView.findViewById(R.id.share);
 
             itemImage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -101,7 +99,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 
     @Override
     public recyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout2,parent,false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -109,8 +107,8 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(recyclerAdapter.ViewHolder holder, int position) {
         holder.itemImage.setImageResource(images[position]);
-        holder.activityName.setText(actName[position]);
-        holder.activityDetails.setText(actDetails[position]);
+//        holder.activityName.setText(actName[position]);
+//        holder.activityDetails.setText(actDetails[position]);
     }
 
     @Override

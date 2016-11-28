@@ -24,6 +24,7 @@ public class NotificationFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.notification_list,container,false);
         fl = (FrameLayout) rootView.findViewById(R.id.menu_frame);
+
         ListView listView = (ListView) rootView.findViewById(R.id.listView);
         NotificationController controller = new NotificationController();
         notificationAdapter adapter = new notificationAdapter(rootView.getContext(), R.layout.list_item_notification2,
