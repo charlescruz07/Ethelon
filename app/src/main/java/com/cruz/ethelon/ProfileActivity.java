@@ -1,19 +1,13 @@
 package com.cruz.ethelon;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.Window;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.app.FragmentManager;
 
-import com.cruz.ethelon.fragments.HomeFragment;
+import com.cruz.ethelon.fragments.ActivitiesFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
-import com.cruz.ethelon.fragments.PointsFragment;
+
 
 /**
  * Created by Acer on 29/11/2016.
@@ -21,38 +15,25 @@ import com.cruz.ethelon.fragments.PointsFragment;
 
 public class ProfileActivity extends Activity{
 
-    ImageView editprof, points, port;
-    TextView edit, point, por;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.profile_layout);
 
-        editprof = (ImageView)findViewById(R.id.editImage);
-        points = (ImageView)findViewById(R.id.pointsImage);
-        port = (ImageView)findViewById(R.id.portImage);
-        edit = (TextView)findViewById(R.id.editTxt);
+        TabLayout tab = (TabLayout) findViewById(R.id.tab_menu);
+        tab.addTab(tab.newTab().setText("Portfolio"));
+        tab.addTab(tab.newTab().setText("Badges"));
+        tab.addTab(tab.newTab().setText("Reedemables"));
 
-
-        TabLayout tabs = (TabLayout)findViewById(R.id.tabsID);
-        editprof.setImageResource(R.drawable.edit);
-        points.setImageResource(R.drawable.tropred);
-        port.setImageResource(R.drawable.port);
-
-        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            FragmentManager fm = getFragmentManager();
             @Override
-            public void onTabSelected(TabLayout.Tab tabId) {
-                FragmentManager fm = getFragmentManager();
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition() == 0)
+                    fm.beginTransaction().replace(R.id.frameyy,new NotificationFragment()).commit();
+                else if(tab.getPosition() == 1)
+                    fm.beginTransaction().replace(R.id.frameyy,new ActivitiesFragment()).commit();
 
-                if (tabId.getPosition() == 0){
-
-                }
-
-                if(tabId.getPosition() == 1){
-                    fm.beginTransaction().replace(R.id.coor,new PointsFragment()).commit();
-
-                }
             }
 
             @Override
@@ -65,8 +46,5 @@ public class ProfileActivity extends Activity{
 
             }
         });
-
-
-
     }
 }

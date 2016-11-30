@@ -2,6 +2,7 @@ package com.cruz.ethelon;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.Window;
 
 import com.cruz.ethelon.fragments.HomeFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
+import com.cruz.ethelon.fragments.ProfileFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
@@ -46,6 +48,9 @@ public class FiveColorChangingTabsActivity extends Activity {
                 if(tabId == R.id.tab_notification){
                     fm.beginTransaction().replace(R.id.menu_frame,new NotificationFragment()).commit();
                     notif.removeBadge();
+                }
+                if(tabId == R.id.tab_profile){
+                    startActivity(new Intent(FiveColorChangingTabsActivity.this,ProfileActivity.class));
                 }
             }
         });
