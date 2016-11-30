@@ -10,6 +10,7 @@ import android.view.Window;
 
 import com.cruz.ethelon.fragments.HomeFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
+import com.cruz.ethelon.fragments.PerformanceFragment;
 import com.cruz.ethelon.fragments.ProfileFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -46,7 +47,7 @@ public class FiveColorChangingTabsActivity extends Activity {
                 }
 
                 if(tabId == R.id.tab_notification){
-                    fm.beginTransaction().replace(R.id.menu_frame,new NotificationFragment()).commit();
+                    fm.beginTransaction().replace(R.id.menu_frame,new PerformanceFragment()).commit();
                     notif.removeBadge();
                 }
                 if(tabId == R.id.tab_profile){

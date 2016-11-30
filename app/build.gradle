@@ -34,5 +34,6 @@ dependencies {
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.github.florent37:diagonallayout:1.0.2'
     compile 'com.github.AlexZhukovich:CircleImageView:18529a89ec'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
 }
