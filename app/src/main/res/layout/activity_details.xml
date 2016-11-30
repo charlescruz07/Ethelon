@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="2dp">
+    android:layout_margin="0dp">
+
+
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="#ffffff">
+        android:layout_height="250dp"
+        android:background="#ffffff"
+        android:id="@+id/ff">
     </FrameLayout>
+
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/v1"
-        android:id="@+id/pic1"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/piz"
+        android:layout_alignBottom="@+id/ff"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_heart_red"
+        android:layout_marginBottom="100dp"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:layout_below="@id/pic1"
+        android:layout_below="@id/ff"
         android:layout_marginTop="0dp"
         android:alpha="1"
         android:background="#000000"
@@ -107,3 +118,4 @@
 
     </FrameLayout>
 </RelativeLayout>
+</ScrollView>

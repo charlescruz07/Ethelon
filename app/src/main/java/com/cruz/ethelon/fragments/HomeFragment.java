@@ -1,5 +1,6 @@
 package com.cruz.ethelon.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -21,6 +22,8 @@ public class HomeFragment extends Fragment{
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,7 +33,9 @@ public class HomeFragment extends Fragment{
         layoutManager = new LinearLayoutManager(rootview.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new recyclerAdapter();
+        Context mContext = getActivity();
+
+        adapter = new AdminHomeAdapter(mContext);
         recyclerView.setAdapter(adapter);
         return rootview;
     }

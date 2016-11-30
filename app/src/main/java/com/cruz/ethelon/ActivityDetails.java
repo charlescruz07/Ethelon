@@ -12,6 +12,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.cruz.ethelon.fragments.DetailsTextFragment;
+import com.cruz.ethelon.fragments.GifWebView;
+import com.cruz.ethelon.fragments.GifWebViewFragment;
 import com.cruz.ethelon.fragments.HomeFragment;
 import com.cruz.ethelon.fragments.PracticeAdapter;
 import com.cruz.ethelon.fragments.PracticeFragment;
@@ -31,13 +33,18 @@ public class ActivityDetails extends Activity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_details);
 
+        //GifWebView view = new GifWebView(this, "file:///android_asset/starboyzz.gif");
+        //setContentView(view);
+
         TabLayout tab = (TabLayout) findViewById(R.id.tab_menu);
         tab.addTab(tab.newTab().setText("Details"));
         tab.addTab(tab.newTab().setText("Pictures"));
         tab.addTab(tab.newTab().setText("Similar Activities"));
 
         FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.ff,new GifWebViewFragment()).commit();
         fm.beginTransaction().replace(R.id.tab_frame,new DetailsTextFragment()).commit();
+
 
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -45,6 +52,7 @@ public class ActivityDetails extends Activity
                 if (tab.getPosition() == 0) {
                     FragmentManager fm = getFragmentManager();
                     fm.beginTransaction().replace(R.id.tab_frame, new DetailsTextFragment()).commit();
+
                 } else if (tab.getPosition() == 1) {
                     FragmentManager fm = getFragmentManager();
                     fm.beginTransaction().replace(R.id.tab_frame, new PracticeFragment()).commit();

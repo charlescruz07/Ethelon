@@ -2,16 +2,10 @@ package com.cruz.ethelon;
 
 import android.app.Activity;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Window;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cruz.ethelon.fragments.HomeFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
