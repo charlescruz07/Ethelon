@@ -1,15 +1,19 @@
-package com.cruz.ethelon.fragments;
+package com.cruz.ethelon.admin;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cruz.ethelon.R;
+import com.cruz.ethelon.admin.ActivitiesFragment;
+import com.cruz.ethelon.admin.CreateActivityFragment;
+import com.cruz.ethelon.admin.VolunteersFragment;
 
 /**
  * Created by Acer on 30/11/2016.
@@ -22,11 +26,15 @@ public class ActivityList extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.admin_home_actlist,container,false);
         TabLayout tab = (TabLayout)rootView.findViewById(R.id.tab_menu);
-        tab.addTab(tab.newTab().setText("Manage Activity"));
-        tab.addTab(tab.newTab().setText("Create Activity"));
+        tab.addTab(tab.newTab().setText("Activities"));
+        tab.addTab(tab.newTab().setText("Volunteers"));
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.add_act);
 
         fm = getFragmentManager();
+        fm.beginTransaction().add(new ActivitiesFragment(),"act_main").commit();
         fm.beginTransaction().replace(R.id.fram2,new ActivitiesFragment()).commit();
+        fm.beginTransaction().add(new CreateActivityFragment(),"create_act").commit();
+        //fm.beginTransaction().add(new VolunteersFragment(),"volunteers").commit();
 
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
@@ -34,10 +42,10 @@ public class ActivityList extends Fragment{
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition() == 0){
-                    fm.beginTransaction().replace(R.id.fram2,new ActivitiesFragment()).commit();
+                    fm.beginTransaction().replace(R.id.fram2,new ActivitiesFragment()).addToBackStack("volunteers").commit();
                 }
-                else if(tab.getPosition() == 1)
-                    fm.beginTransaction().replace(R.id.fram2,new CreateActivityFragment()).commit();
+                else if(tab.getPosition() == 1){}
+                    //fm.beginTransaction().replace(R.id.fram2,new VolunteersFragment()).addToBackStack("act_main").commit();
             }
 
             @Override
@@ -48,6 +56,13 @@ public class ActivityList extends Fragment{
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fm.beginTransaction().replace(R.id.fram2,new CreateActivityFragment()).addToBackStack("act_main").commit();
             }
         });
 

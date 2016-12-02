@@ -15,14 +15,7 @@ import com.cruz.ethelon.R;
 public class PracticeAdapter2 extends RecyclerView.Adapter<PracticeAdapter2.ViewHolder> {
 
     private int[] images = { R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract,
-            R.drawable.similaract};
+            };
 
     class ViewHolder extends RecyclerView.ViewHolder{
 

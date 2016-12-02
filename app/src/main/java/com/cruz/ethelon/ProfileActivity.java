@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.app.FragmentManager;
 
-import com.cruz.ethelon.fragments.ActivitiesFragment;
+import com.cruz.ethelon.admin.ActivitiesFragment;
 import com.cruz.ethelon.fragments.NotificationFragment;
 
 
